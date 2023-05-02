@@ -25,6 +25,7 @@ public class MemberController {
     public String save(@ModelAttribute MemberDTO memberDTO) {
         System.out.println(memberDTO + " con");
         memberService.save(memberDTO);
+        System.out.println("GIT TEST");
             return "redirect:/member/sum";
         }
     @GetMapping("/sum")
