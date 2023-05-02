@@ -17,15 +17,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MemberController {
     private final MemberService memberService;
-    @GetMapping("/save")
+    @GetMapping("/add")
     public String saveForm() {
-        return "save";
+        return "add";
     }
-    @PostMapping("/save")
+    @PostMapping("/add")
     public String save(@ModelAttribute MemberDTO memberDTO) {
         System.out.println(memberDTO + " con");
         memberService.save(memberDTO);
-        System.out.println("GIT TEST");
             return "redirect:/member/sum";
         }
     @GetMapping("/sum")
@@ -34,10 +33,5 @@ public class MemberController {
         model.addAttribute("memberList", memberDTOList);
         return "sum";
     }
-
-
-
-
-
 
 }

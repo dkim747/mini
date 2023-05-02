@@ -19,7 +19,7 @@ public class MemberRepository {
         memberDTO.extract(memberDTO.getMemberEmail());
 
         System.out.println(memberDTO);
-        return sql.insert("Member.save", memberDTO);
+        return sql.insert("Member.sum", memberDTO);
     }
 
     public List<MemberDTO> findAll() {
