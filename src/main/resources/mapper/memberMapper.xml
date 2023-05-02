@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Member">
+    <insert id="save" parameterType="member">
+        insert into LINK_TABLE(MEMBEREMAIL, TITLE, CONTENT, IMAGE)
+        values (#{memberEmail}, #{title}, #{content}, #{image})
+    </insert>
+    <select id="findAll" resultType="member">
+        select * from LINK_TABLE
+    </select>
+</mapper>
